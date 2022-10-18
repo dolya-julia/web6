@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>First work</title>
+    <meta charset="utf-8">
+    <script defer src="myscript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 offset-lg-2 pb-5 pt-5">
+            <h5>Калькулятор стоимости заказа</h5>
+            <div><b>Стоимость: <span id="result">0</span></b> руб</div>
+            <form>
+              <input name="field1" type="text"><b>руб.</b>
+              <input name="field2" type="text"><b>шт.</b>
+              <button id="button1" onclick="return click1();">Рассчитать</button>
+            </form>
+        </div>
+        <div class="col-md-12 offset-lg-2 pb-5 pt-5">
+            <span>Выберите тип товара </span>
+            Тип товара:
+            <form>
+                <select name="prodType">
+                    <option value="1">Product 1</option>
+                    <option value="2">Product 2</option>
+                    <option value="3">Product 3</option>
+                </select>
+                <div id="radios">
+                    <label><input type="radio" name="prodOptions" value="option1"> Опция 1</label>
+                    <label><input type="radio" name="prodOptions" value="option2"> Опция 2</label>
+                    <label><input type="radio" name="prodOptions" value="option3"> Опция 3</label>
+                </div>
+                <div id="checkboxes">
+                    <label><input type="checkbox" name="prop1"> Свойство 1</label>
+                    <label><input type="checkbox" name="prop2"> Свойство 2</label>
+                </div>
+                <div>
+                    Цена товара:<br>
+                    <label><input  id="prodPrice" type="text" readonly> руб. </label>
+                </div>
+                <div>
+                    Введите количество:<br>
+                    <label><input id="prodCount" type="text"> шт.</label>
+                </div>
+                <div id="calc2Res">
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
