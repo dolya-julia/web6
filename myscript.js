@@ -35,14 +35,6 @@
       updatePrice();
     });
   });
- 
-  /*const input = document.querySelector('input');
-  input.addEventListener('change', function(event) {
-    let d = event.target;
-    console.log(d.value);
-    updateTotalPrice()
-  });*/
-
   updatePrice();
 });
 
@@ -124,28 +116,47 @@ function getPrices() {
   };
 }
 
-
-    function click1() {
-    let f1 = document.getElementsByName("field1");
-    let f2 = document.getElementsByName("field2");
-    let r = document.getElementById("result");
-    var re = /^[1-9]+[0-9]*$/;
-    var prov=re.test(f1[0].value);
-    var prov1=re.test(f2[0].value);
-    if (prov &&  prov1) {
-        r.innerHTML = f1[0].value * f2[0].value;
-    }
-    else {
-      alert("Неверные данные");   
-    }
-    return false;
+function click1() {
+  let f1 = document.getElementsByName("field1");
+  let f2 = document.getElementsByName("field2");
+  let r = document.getElementById("result");
+  var re = /^[1-9]+[0-9]*$/;
+  var prov=re.test(f1[0].value);
+  var prov1=re.test(f2[0].value);
+  if (prov &&  prov1) {
+    r.innerHTML = f1[0].value * f2[0].value;
   }
-  
-  let prodCount = document.getElementById("prodCount");
-  let prodPrice = document.getElementById("prodPrice");
-  prodCount.addEventListener("change", function(event) {
-    updateTotalPrice();
-  });
-  /*prodPrice.addEventListener("input", function(event) {
-    updateTotalPrice();
-  });*/
+  else {
+    alert("Неверные данные");   
+  }
+  return false;
+}
+let prodCount = document.getElementById("prodCount");
+let prodPrice = document.getElementById("prodPrice");
+prodCount.addEventListener("change", function(event) {
+  updateTotalPrice();
+});
+$(document).ready(function(){
+  $('.slider').slick({
+    arrows:true,
+    dots:true,
+    adaptiveHeight: true,
+    slidesToShow:4,
+    slidesToScroll:4,
+    speed: 1000,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+      slidesToShow: 2
+    }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 2
+      }
+    }
+  ]
+ });
+});
+
