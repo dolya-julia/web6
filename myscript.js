@@ -153,7 +153,8 @@ $(document).ready(function(){
     {
       breakpoint: 550,
       settings: {
-        slidesToShow: 2
+        slidesToShow: 2,
+        arrows:false
       }
     }
   ]
