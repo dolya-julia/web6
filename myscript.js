@@ -162,4 +162,93 @@ $(document).ready(function(){
   ]
  });
 });
+  let b3 = document.getElementById("button");
+  b3.addEventListener("click", formSend);
+  function formSend(){
+    const form = document.getElementById('form');
+    let error = formValidate(form);
+    if (error === 0){
+      $.ajax({
+        url: 'https://formcarry.com/s/v3jx-pgWK',
+        method: 'POST',
+        data: $('#form').serialize(),
+        dataType: 'json',
+        beforeSend: function() { },
+        success: function(data) { 
+          console.log('Success!');
+          document.getElementById("answer").innerHTML = "Успешно отправлено!";
+          localStorage.removeItem('name');
+          localStorage.removeItem('email');
+          localStorage.removeItem('message');
+       },
+        error: function(err) { 
+          console.log('Fail!' );
+          document.getElementById("answer").innerHTML = "Ошибка!";
+        }
+      });
+    }
+    else{
+      alert('Заполните обязательные поля');
+    }
+  }
+  let input_name = document.getElementById("name");
+  input_name.addEventListener("change", function(event) {
+    localStorage.setItem('name', input_name.value);
+    console.log(localStorage.getItem('name'));
+  }); 
+  let input_email = document.getElementById("email");
+  input_email.addEventListener("change", function(event) {
+    localStorage.setItem('email', input_email.value);
+    console.log(localStorage.getItem('email'));
+  }); 
+  let input_message = document.getElementById("message");
+  input_message.addEventListener("change", function(event) {
+    localStorage.setItem('message', input_message.value);
+    console.log(localStorage.getItem('message'));
+  }); 
+  const name = localStorage.getItem('name');
+  input_name = document.getElementById("name");
+  input_name.value = name;
+  const email = localStorage.getItem('email');
+  input_email = document.getElementById("email");
+  input_email.value = email;
+  const message = localStorage.getItem('message');
+  input_message = document.getElementById("message");
+  input_message.value = message;
 
+  function formValidate(form){
+    let error = 0;
+    let formReq = document.querySelectorAll('.req');
+    for (let i = 0; i < formReq.length; i++){
+      const input = formReq[i];
+      formRemoveError(input);
+      if(input.classList.contains('_email')){
+        if (emailTest(input)){
+          formAddError(input);
+          error++;
+        }
+      }
+      else if(input.getAttribute("type") === "checkbox" && input.checked === false){
+        formAddError(input);
+        error++;
+      }
+      else {
+        if (input.value === ''){
+          formAddError(input);
+          error++;
+        }
+      }
+    }
+    return error;
+  }
+  function emailTest(input){
+    return !/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu.test(input.value);
+  }
+  function formAddError(input){
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+  }
+  function formRemoveError(input){
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+  }
