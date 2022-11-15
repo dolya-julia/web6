@@ -134,5 +134,8 @@
 .form-control._error{
   box-shadow: 0 0 15px red;
 }
-  
+.popup_link {
+  float: right;
+  padding: 50px 30px;
+}
   
