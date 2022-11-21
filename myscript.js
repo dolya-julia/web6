@@ -252,3 +252,24 @@ $(document).ready(function(){
     input.parentElement.classList.remove('_error');
     input.classList.remove('_error');
   }
+
+  $(document).ready(function(){
+    //Скрыть PopUp при загрузке страницы    
+    PopUpHide();
+});
+//Функция отображения PopUp
+function PopUpShow(){
+    $("#popup").show();
+history.pushState({is_popup_opened: true}, "First work | Отправка на почту", "/index.html/popup");
+}
+//Функция скрытия PopUp
+function PopUpHide(){
+    $("#popup").hide();
+history.back(); // 
+}
+// Обработка события нажатия кнопки назад в браузере
+window.onpopstate = (event) => {
+  if (event.state == null || event.state["is_popup_opened"]) {
+    PopUpHide();
+}
+};
