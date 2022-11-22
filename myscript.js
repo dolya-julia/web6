@@ -252,11 +252,11 @@ $(document).ready(function(){
     input.classList.remove('_error');
   }
 
-  /*$(document).ready(function(){
+  $(document).ready(function(){
     $("#popup").hide();
-  });*/
+  });
     //Скрыть PopUp при загрузке страницы    
-    PopUpHide();
+    //PopUpHide();
 
 //Функция отображения PopUp
 function PopUpShow(){
