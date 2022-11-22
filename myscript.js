@@ -237,7 +237,6 @@ $(document).ready(function(){
           formAddError(input);
           error++;
         }
-      }
     }
     return error;
   }
@@ -253,10 +252,10 @@ $(document).ready(function(){
     input.classList.remove('_error');
   }
 
-  $(document).ready(function(){
+  
     //Скрыть PopUp при загрузке страницы    
     PopUpHide();
-});
+
 //Функция отображения PopUp
 function PopUpShow(){
     $("#popup").show();
