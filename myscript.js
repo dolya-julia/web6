@@ -266,7 +266,7 @@ history.pushState({is_popup_opened: true}, "First work | Отправка на �
 //Функция скрытия PopUp
 function PopUpHide(){
     $("#popup").hide();
-history.back(); // 
+history.back(); 
 }
 // Обработка события нажатия кнопки назад в браузере
 window.onpopstate = (event) => {
