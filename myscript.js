@@ -237,9 +237,10 @@ $(document).ready(function(){
           formAddError(input);
           error++;
         }
+      }
     }
     return error;
-  }}
+  }
   function emailTest(input){
     return !/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu.test(input.value);
   }
