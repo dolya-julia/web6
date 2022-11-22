@@ -253,20 +253,16 @@ $(document).ready(function(){
   }
 
   $(document).ready(function(){
-    $("#popup").hide();
+    PopUpHide();
   });
-    //Скрыть PopUp при загрузке страницы    
-    //PopUpHide();
-
 //Функция отображения PopUp
 function PopUpShow(){
     $("#popup").show();
-history.pushState({is_popup_opened: true}, "First work | Отправка на почту", "/index.html/popup");
+    history.pushState({is_popup_opened: true}, "First work | Отправка на почту", "/popup");
 }
 //Функция скрытия PopUp
 function PopUpHide(){
     $("#popup").hide();
-history.back(); 
 }
 // Обработка события нажатия кнопки назад в браузере
 window.onpopstate = (event) => {
