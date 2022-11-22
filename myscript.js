@@ -239,7 +239,7 @@ $(document).ready(function(){
         }
     }
     return error;
-  }
+  }}
   function emailTest(input){
     return !/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu.test(input.value);
   }
@@ -252,7 +252,9 @@ $(document).ready(function(){
     input.classList.remove('_error');
   }
 
-  
+  /*$(document).ready(function(){
+    $("#popup").hide();
+  });*/
     //Скрыть PopUp при загрузке страницы    
     PopUpHide();
 
@@ -270,5 +272,4 @@ history.back(); //
 window.onpopstate = (event) => {
   if (event.state == null || event.state["is_popup_opened"]) {
     PopUpHide();
-}
-};
+}}
