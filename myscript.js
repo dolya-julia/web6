@@ -177,6 +177,7 @@ $(document).ready(function(){
         success: function(data) { 
           console.log('Success!');
           document.getElementById("answer").innerHTML = "Успешно отправлено!";
+         $('form').trigger( 'reset' );
        },
         error: function(err) { 
           console.log('Fail!' );
