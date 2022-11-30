@@ -177,7 +177,6 @@ $(document).ready(function(){
         success: function(data) { 
           console.log('Success!');
           document.getElementById("answer").innerHTML = "Успешно отправлено!";
-          $('.form').find('input[type=text],textarea').val(");
        },
         error: function(err) { 
           console.log('Fail!' );
