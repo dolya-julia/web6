@@ -178,6 +178,9 @@ $(document).ready(function(){
           console.log('Success!');
           document.getElementById("answer").innerHTML = "Успешно отправлено!";
          $('form').trigger( 'reset' );
+          localStorage.removeItem('name');
+          localStorage.removeItem('email');
+          localStorage.removeItem('message');
        },
         error: function(err) { 
           console.log('Fail!' );
